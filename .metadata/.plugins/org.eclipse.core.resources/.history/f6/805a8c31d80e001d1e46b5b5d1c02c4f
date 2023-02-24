@@ -1,0 +1,24 @@
+package metodos;
+
+import javax.swing.JOptionPane;
+
+public class Exercício03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void valorTotal(double compraTotal) {
+		compraTotal = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor total da compra"));
+		while (compraTotal <= 0) {
+			erroWhile();
+			compraTotal = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor total da compra"));
+		}
+	}
+
+	public static void erroWhile() {
+		JOptionPane.showMessageDialog(null, "Valor de compra inválido!");
+	}
+
+}

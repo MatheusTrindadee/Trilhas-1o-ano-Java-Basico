@@ -1,0 +1,40 @@
+package metodos;
+
+import javax.swing.JOptionPane;
+
+public class Exercício02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int c = 0;
+		int l = 0;
+		int notas = 0;
+
+		for (c = 0; c < 3; c++) {
+			notas = Integer.parseInt(JOptionPane.showInputDialog("Informe a sua " + (c + 1) + "º nota"));
+		}
+
+	}
+
+	public static void escolhaMedia(int escolha) {
+		escolha = Integer.parseInt(JOptionPane.showInputDialog("Por qual média você quer calcular suas notas?"));
+		switch (escolha) {
+
+		case 1:
+			calculoAri();
+			break;
+
+		case 2:
+
+		}
+	}
+
+	public static void calculoAri() {
+		int c;
+		for (int l = 0; l < 4; l++)
+			;
+		for (c = 0; c < 4; c++)
+			;
+	}
+
+}

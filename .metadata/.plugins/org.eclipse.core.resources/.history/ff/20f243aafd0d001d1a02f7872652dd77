@@ -1,0 +1,39 @@
+package metodos;
+
+import javax.swing.JOptionPane;
+
+public class Exercício01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int ano=0;
+		int idade=0;
+		
+		idade=calculaAno(ano);
+		
+
+	}
+
+	public static void recebeAno() {
+		int ano = 0;
+		ano = Integer.parseInt(JOptionPane.showInputDialog("Em qual ano você nasceu?"));
+		while (ano >= 2021) {
+			erroAno();
+			ano = Integer.parseInt(JOptionPane.showInputDialog("Em qual ano você nasceu?"));
+
+		}
+	}
+
+	public static int calculaAno(int idade) {
+		int ano=0;
+		idade = 2021 - ano;
+
+		return idade;
+
+	}
+
+	public static void erroAno() {
+		JOptionPane.showMessageDialog(null, "Ano digitado inválido, digite um número válido!");
+
+	}
+}

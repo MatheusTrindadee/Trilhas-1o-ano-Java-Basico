@@ -1,0 +1,13 @@
+package metodos;
+
+import javax.swing.JOptionPane;
+
+public class teste {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JOptionPane.showMessageDialog(null, "      +------+----+" + "\n       | \", jogoTabu[1,1], \" | \", jogoTabu[1,2],\" | \", jogoTabu[1,3],\" | ");
+
+	}
+
+}

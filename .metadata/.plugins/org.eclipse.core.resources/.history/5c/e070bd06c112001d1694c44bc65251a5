@@ -1,0 +1,91 @@
+package metodos;
+
+import javax.swing.JOptionPane;
+
+public class Exercício02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int c = 0;
+		int opcao = 0;
+		double[] notas = new double[3];
+		double totalP = 0;
+		double ponderada = 0;
+
+		for (c = 0; c < 3; c++) {
+			notas[c] = Integer.parseInt(JOptionPane.showInputDialog("Informe a sua " + (c + 1) + "º nota"));
+			while ((notas[c] > 10) || (notas[c] < 0)) {
+				JOptionPane.showMessageDialog(null, "Digite uma nota válida");
+				notas[c] = Integer.parseInt(JOptionPane.showInputDialog("Informe a sua " + (c + 1) + "º nota"));
+			}
+		}
+		opcao = Integer.parseInt(
+				JOptionPane.showInputDialog("Escolha alguma das médias:" + "\n 1 - Aritimética" + "\n 2 - Ponderada"));
+		while ((opcao < 1) || (opcao > 2)) {
+			JOptionPane.showMessageDialog(null, "Opção Inválida");
+			opcao = Integer.parseInt(JOptionPane
+					.showInputDialog("Escolha alguma das médias:" + "\n 1 - Aritimética" + "\n 2 - Ponderada"));
+		}
+		switch (opcao) {
+		case 1:
+			double totalA = 0;
+			totalA = calculoAri(notas);
+			verifica(totalA);
+			break;
+		case 2:
+			double[] escolhaPeso = new double[3];
+			for (c = 0; c < 3; c++) {
+				escolhaPeso[c] = Integer.parseInt(JOptionPane.showInputDialog("Informe o seu " + (c + 1) + "º peso"));
+				while (escolhaPeso[c] < 0) {
+					JOptionPane.showMessageDialog(null, "Digite um peso válido");
+					escolhaPeso[c] = Integer
+							.parseInt(JOptionPane.showInputDialog("Informe o seu " + (c + 1) + "º peso"));
+				}
+			}
+			ponderada = calculoPon(escolhaPeso, notas);
+			verifica(ponderada);
+			break;
+		}
+
+	}
+	// limite
+
+	public static double calculoAri(double[] notas) {
+		double calculoA = 0;
+		double totalA = 0;
+
+		for (int c = 0; c < 3; c++) {
+			calculoA = calculoA + notas[c];
+			totalA = calculoA / 3;
+
+		}
+		return totalA;
+	}
+
+	public static double calculoPon(double[] peso, double[] nota) {
+		double calculoP = 0;
+		double totalP = 0;
+		double somaPeso = 0;
+		double ponderada = 0;
+		for (int c = 0; c < 3; c++) {
+			calculoP =  nota[c] * peso[c];
+			totalP = totalP + calculoP;
+			somaPeso = somaPeso + peso[c];
+		}
+		ponderada = totalP / somaPeso;
+		return ponderada;
+	}
+
+	public static void verifica(double totalA) {
+		double ponderada=0;
+		if (totalA >= 7) {
+			JOptionPane.showMessageDialog(null, "Você foi aprovado! Sua nota: " + totalA);
+
+		} else {
+			JOptionPane.showMessageDialog(null, "Você foi reprovado! Sua nota: " + totalA);
+		}
+		
+		
+	}
+
+}
